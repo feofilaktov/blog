@@ -21,6 +21,7 @@ class Article(db.Model):
         return '<Article %r>' % self.id  # id for arcticle identification
 
 
+
 # in python console
 # from app import db
 # db.create.all()
@@ -79,7 +80,6 @@ def create_article():
         return render_template('create-article.html')
 
 
-
 @app.route('/posts/<int:id>/update', methods=['POST', 'GET'])
 def post_update(id):
     article = Article.query.get(id)
@@ -96,6 +96,7 @@ def post_update(id):
     else:
         return render_template('post_update.html', article=article)
 
+
 # Авторизация в будущем
 # @app.route('/login', methods=['POST', 'GET'])
 # def login_admin():
@@ -108,7 +109,6 @@ def post_update(id):
 #             return render_template('admin.html', username=username, userpass=userpass, row=row, count_users=count_users)
 #     else:
 #         return update_user()
-
 
 
 if __name__ == '__main__':
