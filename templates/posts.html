@@ -10,11 +10,11 @@
     <h1>Все статьи</h1>
     {% if articles|length > 0%}
         {% for el in articles %}
-        <div class="alert alert-info">
+        <div class="post">
             <h2>{{ el.title }}</h2>
             <p>{{ el.intro }}</p>
-            <p><b>Дата: {{ el.date.date() }}</b></p>
-            <a href="/posts/{{ el.id }}" class="btn btn-warning">Подробнее</a>
+            <p><b>Дата: {{ el.date.date() }}</b> <a href="/posts/{{ el.id }}" class="btn btn-secondary btn-sm float-right">Подробнее</a></p>
+
          </div>
         {% endfor %}
     {% else %}

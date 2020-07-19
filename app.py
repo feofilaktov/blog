@@ -27,7 +27,7 @@ class Article(db.Model):
 # db.create.all()
 # blog.app will be created
 
-@app.route('/')
+
 @app.route('/home')
 def index():
     return render_template('index.html')
@@ -37,7 +37,7 @@ def index():
 def about():
     return render_template('about.html')
 
-
+@app.route('/')
 @app.route('/posts')
 def posts():
     articles = Article.query.order_by(Article.date.desc()).all()  # Take from DB(class articel) all data sorted by date
